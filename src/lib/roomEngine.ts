@@ -33,21 +33,6 @@ const STALL_TIMEOUT_MS = 60_000;
 const MAX_REQUEST_IDS = 1000;
 const RELAY_REDUNDANCY = 8;
 
-/**
- * Optional TURN relay, set at build time. Without one, peers behind carrier-grade or symmetric NAT
- * (mobile data, guest/office Wi-Fi) cannot connect. Trystero still uses its default STUN servers too.
- * VITE_TURN_URLS is a comma-separated list, e.g. "turn:a.example:80,turns:a.example:443?transport=tcp".
- * These values end up in the public bundle, so use credentials you are happy to expose (with a usage cap).
- */
-const TURN_CONFIG: RTCIceServer[] | undefined = (() => {
-  const urls = (import.meta.env.VITE_TURN_URLS ?? '')
-    .split(',')
-    .map((u: string) => u.trim())
-    .filter(Boolean);
-  if (!urls.length) return undefined;
-  return [{ urls, username: import.meta.env.VITE_TURN_USERNAME, credential: import.meta.env.VITE_TURN_CREDENTIAL }];
-})();
-
 const PRIORITY_PREVIEW = 0;
 const PRIORITY_THUMB = 1;
 const PRIORITY_FULL = 2;
@@ -153,7 +138,7 @@ export class RoomEngine {
     try {
       // Use more public Nostr relays than the default 5: some reject ephemeral events,
       // so extra redundancy makes matchmaking far more reliable.
-      const room = joinRoom({ appId: APP_ID, relayConfig: { redundancy: RELAY_REDUNDANCY }, turnConfig: TURN_CONFIG }, `room-${this.roomCode}`, {
+      const room = joinRoom({ appId: APP_ID, relayConfig: { redundancy: RELAY_REDUNDANCY } }, `room-${this.roomCode}`, {
         onJoinError: (e) => this.store.pushToast({ tone: 'error', message: `Connection error: ${e.error}` }),
       });
       room.onPeerJoin = (id) => this.handlePeerJoin(id);

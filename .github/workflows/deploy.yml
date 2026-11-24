@@ -33,10 +33,6 @@ jobs:
       - run: npm run build
         env:
           SITE_URL: ${{ steps.pages.outputs.base_url }}
-          # Optional TURN relay for peers that can't connect directly (see README).
-          VITE_TURN_URLS: ${{ secrets.TURN_URLS }}
-          VITE_TURN_USERNAME: ${{ secrets.TURN_USERNAME }}
-          VITE_TURN_CREDENTIAL: ${{ secrets.TURN_CREDENTIAL }}
       - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
