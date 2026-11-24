@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <script>
+      // Invite links used to point here. Send anyone holding one straight to their room.
+      if (new URLSearchParams(location.search).get('room')) location.replace('./app/' + location.search);
+      document.documentElement.classList.add('js');
+    </script>
+    <title>PhotoCrew - Share Photos with Your Group. No Cloud. No Hassle.</title>
+    <meta name="description" content="Share photos with your group, device to device. No cloud, no account, completely free. Works on iPhone, Mac, Windows and Android." />
+    <meta name="theme-color" content="#161512" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PhotoCrew" />
+    <meta property="og:title" content="PhotoCrew - Share Photos with Your Group. No Cloud. No Hassle." />
+    <meta property="og:description" content="Device to device, completely free. Works on iPhone, Mac, Windows and Android." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/landing/landing.css" />
+    <script type="module" src="/src/landing/main.ts"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <a class="brand" href="#top"><img src="/favicon.svg" alt="" width="30" height="30" />PhotoCrew</a>
+      <nav aria-label="Main">
+        <a class="pill hide-s" href="#how">How it works</a>
+        <a class="pill hide-s" href="#private">Privacy</a>
+        <a class="pill hide-s" href="#contact">Contact</a>
+        <a class="pill solid" href="./app/">Open app</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <h1 class="disp spread" aria-label="Share photos with your group. No cloud. No hassle.">
+          <span class="row" aria-hidden="true"><i><b>Share</b></i><i><b>photos</b></i><i><b>with</b></i></span>
+          <span class="row" aria-hidden="true"><i><b>your</b></i><i><b>group.</b></i></span>
+          <span class="row four" aria-hidden="true"><span class="duo"><i><b>No</b></i><i><b>cloud.</b></i></span><span class="duo"><i><b>No</b></i><i><b>hassle.</b></i></span></span>
+        </h1>
+        <p class="serif">Everyone's photos in one shared grid, on any device. <br />Completely free.</p>
+        <div class="film-space">
+          <div class="film" id="film">
+            <video id="loop" src="/media/photocrew-demo.mp4" poster="/media/photocrew-demo.jpg" muted loop playsinline preload="metadata" width="1600" height="900" aria-label="Silent demo of PhotoCrew on two phones and a laptop"></video>
+            <button class="watch" id="watch" type="button"><span>Watch demo</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" /></svg></button>
+            <button class="pill toggle" id="toggle" type="button">Pause</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="cloud" id="private">
+        <h2 class="disp big-no" aria-label="No cloud">
+          <span aria-hidden="true">N<span class="o" data-o="raspberries,hike,camp"></span></span>
+          <span aria-hidden="true">CL<span class="o" data-o="canoe,sunset,waterfall"></span>UD</span>
+        </h2>
+        <p class="serif">Your photos and data stay on your own device. Photos only go <br class="hide-s" />to the people in your room, when you share them.</p>
+        <dl class="ledger">
+          <div><dt>To the cloud</dt><dd class="disp">Nothing</dd><dd>No uploads, no storage, no account, no ads, no tracking.</dd></div>
+          <div><dt>To your crew</dt><dd class="disp">Your picks</dd><dd>Small previews of the photos you add, then the originals your crew downloads. Sent directly and encrypted.</dd></div>
+          <div><dt>To connect</dt><dd class="disp">An intro</dd><dd>Public relays pass along connection details so devices can find each other. Photos skip them.</dd></div>
+        </dl>
+      </section>
+
+      <section class="get" aria-labelledby="get-h">
+        <h2 class="disp mid" id="get-h">What your crew gets</h2>
+        <div class="panels" id="panels">
+          <article class="panel open">
+            <button type="button" class="disp" aria-expanded="true">Private</button>
+            <div class="inner"><p>All photos and data remain on your device.</p><ul><li>No cloud uploads</li><li>No account or sign-up</li><li>No tracking or ads</li><li>Shared only with people in your room</li><li>Closes when you close the tab</li></ul></div>
+          </article>
+          <article class="panel">
+            <button type="button" class="disp" aria-expanded="false">Free</button>
+            <div class="inner"><p>Completely free. Every feature, for everyone.</p><ul><li>No subscription</li><li>No trial</li><li>No watermark</li><li>No card needed</li></ul></div>
+          </article>
+          <article class="panel">
+            <button type="button" class="disp" aria-expanded="false">Any device</button>
+            <div class="inner"><p>Mix them however you like. It opens in the browser.</p><ul><li>iPhone</li><li>Mac</li><li>Windows</li><li>Android</li></ul></div>
+          </article>
+          <article class="panel">
+            <button type="button" class="disp" aria-expanded="false">Full size</button>
+            <div class="inner"><p>Downloads are the files your friends added, not shrunken copies.</p><ul><li>Pick only the ones you want</li><li>Save to your camera roll</li><li>Or take a ZIP</li></ul></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="how" id="how" aria-label="How it works">
+        <div class="pin">
+          <div class="track" id="track" tabindex="0">
+            <div class="step"><h3 class="disp">Start</h3><img loading="lazy" src="/src/landing/img/screen-qr.webp" width="780" height="1688" alt="Invite screen with a QR code and a four-character room code" /><p class="serif">Open a room. Your crew scans the code or types four characters.</p></div>
+            <div class="step"><h3 class="disp">Add</h3><img loading="lazy" src="/src/landing/img/screen-grid.webp" width="780" height="1688" alt="Shared grid with photos from four people" /><p class="serif">Everyone adds their shots. They land in one grid as small previews.</p></div>
+            <div class="step"><h3 class="disp">Pick</h3><img loading="lazy" src="/src/landing/img/screen-select.webp" width="780" height="1688" alt="Four photos selected, with a download button" /><p class="serif">Tap the ones you want. Leave the forty blurry ones behind.</p></div>
+            <div class="step"><h3 class="disp">Keep</h3><img loading="lazy" src="/src/landing/img/screen-save.webp" width="780" height="1688" alt="Save to camera roll or download as ZIP" /><p class="serif">Originals come straight from your friends' devices.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="devices" aria-labelledby="dev-h">
+        <div class="rows disp" id="rows" aria-hidden="true"></div>
+      </section>
+      <div class="across">
+        <h2 class="disp mid" id="dev-h">Works across all devices</h2>
+        <p class="serif">iPhone, Mac, Windows and Android, together in the same room.</p>
+      </div>
+
+      <section class="faq" id="questions">
+        <h2 class="disp mid">Good to know</h2>
+        <div>
+          <details><summary>Do we need the same Wi-Fi?</summary><p>No, but it works best that way. If the Wi-Fi keeps devices apart, as guest networks often do, join one person's hotspot. Connecting over the internet works on many networks, though not all.</p></details>
+          <details><summary>Does it work without internet?</summary><p>No. You need a connection to open PhotoCrew and for devices to find each other. After that, photos travel directly between them.</p></details>
+          <details><summary>Who can see what I add?</summary><p>Anyone with the room's link or code can join and see it, so share the code only with people you trust. When you leave, your originals are no longer available.</p></details>
+          <details><summary>What can relay servers see?</summary><p>Connection details, such as your IP address, so devices can reach each other. People in your room connect to you directly, so they can learn it too. Photos don't go through the relays.</p></details>
+          <details><summary>What happens if someone leaves?</summary><p>Their previews stay in your grid, marked offline. You can't download their originals until they come back and add them again, so keep your tab open until everyone's done.</p></details>
+          <details><summary>Can I share videos or hundreds of photos?</summary><p>PhotoCrew is for photos only. Downloads are held in memory until you save them, so take big sets in smaller batches.</p></details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot" id="contact">
+      <form class="join" action="./app/" method="get">
+        <label class="disp" for="code">Got a code?</label>
+        <div><input class="disp" id="code" name="room" required minlength="4" maxlength="4" pattern="[A-Za-z0-9]{4}" title="Four letters or numbers" placeholder="LAKE" autocomplete="off" autocapitalize="characters" spellcheck="false" /><button class="pill solid" type="submit">Join room</button><a class="pill" href="./app/">Start a room</a></div>
+      </form>
+      <div class="cols">
+        <div><h2>Contact</h2><ul id="contact-list"><li>Contact details coming soon</li></ul></div>
+        <div class="links disp"><a href="#top">Home</a><a href="#how">How it works</a><a href="#private">Privacy</a><a href="#questions">Questions</a></div>
+        <div><h2>Photo credits</h2><details><summary>Show</summary><p>Photos from Unsplash by Roberto Nickson, Alexey Topolyanskiy, Matteo Minelli, Wolfgang Lutz, Danka &amp; Peter, Andrew Coelho, Christian Joudrey, Jordan McQueen, Carli Jean, Monstruo Estudio, Glen Carrie, Matthew Wiebe, Paul Jarvis, Andrew Ridley, Austin Ban and Joseph Barrientos. People and rooms shown are examples.</p></details></div>
+      </div>
+      <svg class="wordmark" viewBox="0 0 1000 152" role="img" aria-label="PhotoCrew"><text x="-4" y="148" textLength="998" lengthAdjust="spacingAndGlyphs">PHOTOCREW</text></svg>
+    </footer>
+
+    <dialog id="player" aria-label="PhotoCrew demo">
+      <form method="dialog"><button class="pill solid">Close</button></form>
+      <video id="full" src="/media/photocrew-demo.mp4" poster="/media/photocrew-demo.jpg" controls playsinline muted preload="none"></video>
+    </dialog>
+  </body>
+</html>
