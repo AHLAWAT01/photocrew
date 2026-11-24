@@ -139,7 +139,14 @@ export class RoomEngine {
       // Use more public Nostr relays than the default 5: some reject ephemeral events,
       // so extra redundancy makes matchmaking far more reliable.
       const room = joinRoom({ appId: APP_ID, relayConfig: { redundancy: RELAY_REDUNDANCY } }, `room-${this.roomCode}`, {
-        onJoinError: (e) => this.store.pushToast({ tone: 'error', message: `Connection error: ${e.error}` }),
+        // PhotoCrew uses no relay server, so peers on different networks often can't reach each other.
+        onJoinError: (e) =>
+          this.store.pushToast(
+            /could not connect to peer/i.test(e.error)
+              ? { tone: 'error', message: "Couldn't connect to someone. Make sure everyone is on the same Wi-Fi or hotspot, then reload." }
+              : { tone: 'error', message: `Connection error: ${e.error}` },
+            8000,
+          ),
       });
       room.onPeerJoin = (id) => this.handlePeerJoin(id);
       room.onPeerLeave = (id) => this.handlePeerLeave(id);

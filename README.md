@@ -96,5 +96,5 @@ src/
 - **Share sheet batches:** iOS and Android handle about 20 images per share reliably. For bigger batches use ZIP.
 - **Memory:** received originals are held in memory until saved. Pulling hundreds of large photos at once on an older phone can exhaust memory, so batches of around 50 are comfortable.
 - **HEIC:** iOS converts HEIC to JPEG when you pick photos in Safari. Chrome or Firefox on desktop can't decode HEIC, so those files are skipped with a notice.
-- **Different networks:** it still works over the internet via STUN (badge shows *P2P via Internet*). Strict symmetric NATs would need a TURN server, which can be passed through `joinRoom`'s `turnConfig`.
+- **Same network only:** PhotoCrew deliberately uses no third-party relay (TURN) server. Devices on the same Wi-Fi or phone hotspot connect directly. Across different networks it sometimes still connects via STUN (badge shows *P2P via Internet*), but mobile data and guest/office Wi-Fi usually block it, and the app asks everyone to join the same network.
 - **Matchmaking** depends on public Nostr relays. If friends don't appear within about 15 seconds, have everyone reload. PhotoCrew uses 8 relays to stay resilient when some are down.
