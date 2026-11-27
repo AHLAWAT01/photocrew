@@ -25,12 +25,12 @@ function socialMeta(siteUrl: string | undefined): Plugin {
 // and the Web Share API are only available in secure contexts. basicSsl gives
 // the dev server a self-signed cert so phones on your Wi-Fi can use the LAN URL.
 export default defineConfig({
-  // Two static pages: the landing page at / and the app at /app/.
+  // Static pages: the landing page at /, the app at /app/ and the privacy policy at /privacy/.
   appType: 'mpa',
   // Relative asset URLs, so the build also works from a sub-folder (e.g. GitHub Pages).
   base: './',
   plugins: [react(), tailwindcss(), basicSsl(), socialMeta(process.env.SITE_URL ?? process.env.URL)],
-  build: { rolldownOptions: { input: { landing: 'index.html', app: 'app/index.html' } } },
+  build: { rolldownOptions: { input: { landing: 'index.html', app: 'app/index.html', privacy: 'privacy/index.html' } } },
   server: { host: true, port: 5173 },
   preview: { host: true, port: 4173 },
 });

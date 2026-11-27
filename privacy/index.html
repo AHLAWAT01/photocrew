@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Privacy Policy - PhotoCrew</title>
+    <meta name="description" content="What PhotoCrew collects (almost nothing), what stays on your device, and which services help devices connect." />
+    <meta name="theme-color" content="#161512" />
+    <link rel="canonical" href="https://photocrewapp.com/privacy/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="module" src="/src/landing/privacy.ts"></script>
+    <style>
+      :root { --ink: #161512; --bone: #f1f1ef; --ash: #66625a; --light: #ff5a26; --pad: clamp(16px, 2.2vw, 34px); }
+      * { box-sizing: border-box; }
+      html { background: var(--bone); -webkit-text-size-adjust: 100%; }
+      body { margin: 0; background: var(--bone); color: var(--ink); font: 400 17px/1.55 'Host Grotesk Variable', 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+      a { color: inherit; text-underline-offset: 3px; }
+      a:hover { color: var(--light); }
+      header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 22px var(--pad); background: var(--ink); color: var(--bone); }
+      .brand { display: flex; align-items: center; gap: 8px; font-weight: 650; font-size: 1.25rem; letter-spacing: -0.045em; text-decoration: none; }
+      .pill { display: inline-flex; align-items: center; min-height: 36px; padding: 0 13px; border: 1px solid var(--bone); border-radius: 8px; background: var(--bone); color: var(--ink); font-weight: 550; font-size: 0.92rem; text-decoration: none; }
+      .pill:hover { background: var(--light); border-color: var(--light); color: var(--ink); }
+      main { max-width: 44rem; margin: 0 auto; padding: clamp(48px, 8vw, 96px) var(--pad); }
+      h1 { margin: 0 0 8px; font-weight: 500; text-transform: uppercase; letter-spacing: -0.06em; line-height: 0.9; font-size: clamp(2.6rem, 8vw, 5rem); }
+      .lede { margin: 0 0 40px; font: italic 400 clamp(1.2rem, 2vw, 1.5rem)/1.25 'Newsreader Variable', Georgia, serif; color: var(--ash); }
+      h2 { margin: 44px 0 10px; padding-top: 16px; border-top: 1px solid var(--ink); font-size: 1.35rem; font-weight: 550; letter-spacing: -0.03em; }
+      ul { padding-left: 1.2em; }
+      li { margin: 6px 0; }
+      footer { padding: 32px var(--pad); background: var(--ink); color: var(--bone); font-size: 0.95rem; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/"><img src="/favicon.svg" alt="" width="30" height="30" />PhotoCrew</a>
+      <a class="pill" href="/app/">Open app</a>
+    </header>
+
+    <main>
+      <h1>Privacy</h1>
+      <p class="lede">Short version: your photos never touch a server, there are no accounts, and we don't use cookies. Updated 27 November 2026.</p>
+
+      <h2>Your photos</h2>
+      <ul>
+        <li>Photos are never uploaded to PhotoCrew or any cloud service. We have no servers that store them.</li>
+        <li>Small previews of the photos you add, and the originals someone chooses to download, go directly from your device to the people in your room, over an encrypted connection.</li>
+        <li>Anyone who has your room's code or link can join and see what you add, so share it only with people you trust.</li>
+        <li>When you close the tab, your photos stop being available to others. Anything you received stays in your browser's memory until you save it or close the tab.</li>
+      </ul>
+
+      <h2>What stays on your device</h2>
+      <ul>
+        <li>The display name you choose is saved in your browser so you don't have to type it again. It never leaves your device except to show your name to people in your room.</li>
+        <li>No account, email address or phone number is needed to use PhotoCrew.</li>
+      </ul>
+
+      <h2>Services that help devices connect</h2>
+      <p>To let devices find each other without a server of our own, PhotoCrew uses public infrastructure. These services see technical connection details, such as your IP address, but never your photos:</p>
+      <ul>
+        <li><strong>Public Nostr relays</strong> pass along an encrypted "introduction" between devices in the same room.</li>
+        <li><strong>STUN servers from Google and Cloudflare</strong> tell your device its public network address so others can reach it.</li>
+        <li><strong>People in your room</strong> connect to you directly, so they can see your IP address too.</li>
+      </ul>
+      <p>PhotoCrew does not use relay (TURN) servers. Photos only travel directly between devices.</p>
+
+      <h2>Website analytics</h2>
+      <p>The home page (not the app) uses <a href="https://www.cloudflare.com/web-analytics/">Cloudflare Web Analytics</a> to count visits. It does not use cookies, does not build a profile of you and does not follow you to other sites. It records things like which page was viewed, the referring site, country, and browser and device type, in aggregate.</p>
+
+      <h2>Hosting</h2>
+      <p>The website is hosted on GitHub Pages. Like any web host, GitHub may log basic request information, such as IP addresses, for security and to keep the service running. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</p>
+
+      <h2>Ads and selling data</h2>
+      <p>PhotoCrew shows no ads and does not sell or share any personal data. If that ever changes, this page will be updated first.</p>
+
+      <h2>Children</h2>
+      <p>PhotoCrew is not directed at children under 13 and does not knowingly collect information from them.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about privacy? Email <a href="mailto:hello@photocrewapp.com">hello@photocrewapp.com</a>.</p>
+    </main>
+
+    <footer><a href="/">Home</a> · <a href="/app/">Open app</a> · <a href="mailto:hello@photocrewapp.com">hello@photocrewapp.com</a></footer>
+  </body>
+</html>
