@@ -9,13 +9,26 @@
       document.documentElement.classList.add('js');
     </script>
     <title>PhotoCrew - Share Photos with Your Group. No Cloud. No Hassle.</title>
-    <meta name="description" content="Share photos with your group, device to device. No cloud, no account, completely free. Works on iPhone, Mac, Windows and Android." />
+    <meta name="description" content="Share full-quality photos with your group, phone to phone over Wi-Fi. No upload, no cloud, no account, completely free. Works between iPhone, Android, Mac and Windows." />
     <meta name="theme-color" content="#161512" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="PhotoCrew" />
     <meta property="og:title" content="PhotoCrew - Share Photos with Your Group. No Cloud. No Hassle." />
     <meta property="og:description" content="Device to device, completely free. Works on iPhone, Mac, Windows and Android." />
     <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "PhotoCrew",
+        "url": "https://photocrewapp.com/",
+        "description": "Share full-quality photos with your group, device to device over Wi-Fi. No upload, no cloud, no account.",
+        "applicationCategory": "PhotographyApplication",
+        "operatingSystem": "iOS, Android, macOS, Windows",
+        "browserRequirements": "Requires a modern web browser with WebRTC",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      }
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="/src/landing/landing.css" />
     <script type="module" src="/src/landing/main.ts"></script>
@@ -107,6 +120,9 @@
       <section class="faq" id="questions">
         <h2 class="disp mid">Good to know</h2>
         <div>
+          <details><summary>How do I share photos from iPhone to Android?</summary><p>Open PhotoCrew in the browser on both phones, start a room on one and scan its QR code with the other. Add your photos and the other phone downloads the originals directly, at full quality. No app to install and no account.</p></details>
+          <details><summary>Is it like AirDrop?</summary><p>Similar idea, but it works across every device, not just Apple ones, and with a whole group at once. Everyone sees one shared grid and picks only the photos they want.</p></details>
+          <details><summary>Do photos lose quality?</summary><p>No. You download the exact original files your friends added, not compressed copies like many chat apps send.</p></details>
           <details><summary>Do we need the same Wi-Fi?</summary><p>No, but it works best that way. If the Wi-Fi keeps devices apart, as guest networks often do, join one person's hotspot. Connecting over the internet works on many networks, though not all.</p></details>
           <details><summary>Does it work without internet?</summary><p>No. You need a connection to open PhotoCrew and for devices to find each other. After that, photos travel directly between them.</p></details>
           <details><summary>Who can see what I add?</summary><p>Anyone with the room's link or code can join and see it, so share the code only with people you trust. When you leave, your originals are no longer available.</p></details>
